@@ -1,0 +1,18 @@
+# Qualisys driver (Qualisys Track Manager with real-time output enabled).
+qualisys_driver:
+  ros__parameters:
+    server_address: "192.168.1.20"  # QTM computer
+    base_port: 22222                # QTM RT base port
+    udp_port: 0                     # 0: stream over TCP; >0: UDP on this port
+    timeout: 2.0
+    up_axis: "auto"                 # auto (from QTM calibration) or x, -x, y, -y, z, -z
+    latency: 0.0                    # seconds subtracted from the reception time
+    frame_id: "mocap"
+    publish_markers: true
+    publish_rigid_bodies: true
+    publish_skeletons: true
+    publish_tf: false
+    tf_prefix: ""
+    qos:
+      reliability: "reliable"
+      depth: 10
